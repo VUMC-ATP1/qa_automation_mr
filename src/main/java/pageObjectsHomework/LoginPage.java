@@ -3,35 +3,44 @@ package pageObjectsHomework;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.WebDriverManager;
 
 public class LoginPage {
 
     private WebElement element;
-    private WebDriver driver;
+
+    //private WebDriver driver;
+    WebDriver driver = WebDriverManager.getInstance();
+
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    private final By username = By.id("user-name");
-    private final By password = By.id("password");
+    private final By user_name = By.id("user-name");
+    private final By passwordd = By.id("password");
     private final By clickOnLoginButton = By.id("login-button");
 
 
+    //for Cucumber test
+    public void authorizeUsers(String username, String password) {
+        driver.findElement(user_name).sendKeys(username);
+        driver.findElement(passwordd).sendKeys(password);
+    }
     public WebElement getUsernameField() {
-        return driver.findElement(username);
+        return driver.findElement(user_name);
     }
 
     public void setUsernameField(String value) {
-        driver.findElement(username).sendKeys(value);
+        driver.findElement(user_name).sendKeys(value);
     }
 
     public WebElement getPasswordField() {
-        return driver.findElement(password);
+        return driver.findElement(passwordd);
     }
 
     public void setPasswordField(String value) {
-        driver.findElement(password).sendKeys(value);
+        driver.findElement(passwordd).sendKeys(value);
     }
 
     public void clickOnLoginButton() {

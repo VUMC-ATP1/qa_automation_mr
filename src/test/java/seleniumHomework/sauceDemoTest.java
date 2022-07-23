@@ -14,14 +14,14 @@ public class sauceDemoTest {
     LoginPage loginPage;
     InventoryPage inventoryPage;
     CartPage cartPage;
-    CheckoutPage checkoutPage;
+    CheckoutPagee checkoutPage;
     CheckoutOverviewPage checkoutOverviewPage;
     CheckoutSuccessPage checkoutSuccessPage;
 
+    //Input values
     private final String SAUCE_URL = "https://www.saucedemo.com/";
     private final String SAUCE_INVENTORY_URL = "https://www.saucedemo.com/inventory.html";
 
-    //Input values
     private final String USERNAME = "standard_user";
     private final String PASSWORD = "secret_sauce";
     private final String PRODUCT_NAME = "Sauce Labs Bike Light";
@@ -41,7 +41,7 @@ public class sauceDemoTest {
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
-        checkoutPage = new CheckoutPage(driver);
+        checkoutPage = new CheckoutPagee(driver);
         checkoutOverviewPage = new CheckoutOverviewPage(driver);
         checkoutSuccessPage = new CheckoutSuccessPage(driver);
     }

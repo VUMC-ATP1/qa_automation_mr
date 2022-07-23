@@ -3,13 +3,14 @@ package pageObjectsHomework;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
-public class CheckoutPage {
+public class CheckoutPagee {
 
     private WebElement element;
     private WebDriver driver;
 
-    public CheckoutPage(WebDriver driver) {
+    public CheckoutPagee(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -22,6 +23,17 @@ public class CheckoutPage {
     private final By errorMessage = By.xpath("//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]/h3");
 
 
+    // for Cucumber homework
+    public void populateFields(String firstName, String lastName, String zip_postalcode) {
+        driver.findElement(firstNameField).sendKeys(firstName);
+        driver.findElement(lastNameField).sendKeys(lastName);
+        driver.findElement(zipOrPostalCodeField).sendKeys(zip_postalcode);
+    }
+
+    public void receiveErrorMessage (String error_message) {
+        driver.findElement(errorMessage).getAttribute(error_message);
+
+    }
     public WebElement getFirstNameField() {
         return driver.findElement(firstNameField);
     }
