@@ -22,11 +22,12 @@ public class LoginPage {
     private final By clickOnLoginButton = By.id("login-button");
 
 
-    //for Cucumber test
+    // Changes for Cucumber homework Cucumber test
     public void authorizeUsers(String username, String password) {
         driver.findElement(user_name).sendKeys(username);
         driver.findElement(passwordd).sendKeys(password);
     }
+    // End of changes for Cucumber homework
     public WebElement getUsernameField() {
         return driver.findElement(user_name);
     }

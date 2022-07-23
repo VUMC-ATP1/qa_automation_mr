@@ -23,7 +23,7 @@ public class CheckoutPagee {
     private final By errorMessage = By.xpath("//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]/h3");
 
 
-    // for Cucumber homework
+    // Changes for Cucumber homework
     public void populateFields(String firstName, String lastName, String zip_postalcode) {
         driver.findElement(firstNameField).sendKeys(firstName);
         driver.findElement(lastNameField).sendKeys(lastName);
@@ -32,8 +32,8 @@ public class CheckoutPagee {
 
     public void receiveErrorMessage (String error_message) {
         driver.findElement(errorMessage).getAttribute(error_message);
-
     }
+    // End of changes for Cucumber homework
     public WebElement getFirstNameField() {
         return driver.findElement(firstNameField);
     }
